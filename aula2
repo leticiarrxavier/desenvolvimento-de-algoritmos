@@ -1,0 +1,48 @@
+//calculadora.h
+
+float somar(float a, float b);
+float subtrair(float a , float b);
+float multiplicar(float a, float b);
+float dividir(float a, float b);
+int eh_divisao_valida(float divisor);
+
+--------------------------------------------------------
+//calculadora.c
+#include "calculadora.h"
+float somar(float a, float b) {
+	return a + b;
+}
+float subtrair(float a, float b) {
+	return a - b;
+}
+float multiplicar(float a, float b) {
+	return a * b;
+}
+float dividir(float a, float b) {
+	return a / b;
+}
+int eh_divisao_valida(float divisor) {
+	return divisor != 0;
+}
+
+--------------------------------------------------------
+//main1.c
+#include <stdio.h>
+#include "calculadora.h"
+
+int main() {
+float a = 10.0, b = 3.0;
+
+printf("a = %.2f, b = %.2f\n", a, b);
+printf("Soma: %.2f\n", somar(a, b));
+printf("Subtraçao: %.2f\n", subtrair(a, b));
+printf("multiplicacao: %.2f\n", multiplicar(a, b));
+
+if (eh_divisao_valida (b)) {
+	printf("Divisao: %.2f\n", dividir(a, b));
+} else {
+	printf("Erro: Divisao por zero!\n");
+}
+system ("pause");
+return 0;
+}
